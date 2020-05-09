@@ -23,6 +23,8 @@
 #ifndef __BUZZER_H__
 #define __BUZZER_H__
 
+#if ENABLED(SPEAKER)
+
 #include "types.h"
 #include "fastio.h"
 #include "circularqueue.h"
@@ -143,4 +145,9 @@ class Buzzer {
 
 extern Buzzer buzzer;
 
+#else
+
+#undef BEEPER_PIN
+
+#endif
 #endif
